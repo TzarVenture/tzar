@@ -1,0 +1,28 @@
+.page-header__innerAuW h2 {
+  font-size: 48px; /* default desktop size */
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center; /* keeps it balanced on all devices */
+  word-wrap: break-word;
+}
+
+/* iPads (landscape & portrait) */
+@media (max-width: 1024px) {
+  .page-header__innerAuW h2 {
+    font-size: 36px;
+  }
+}
+
+/* iPhones & smaller screens */
+@media (max-width: 768px) {
+  .page-header__innerAuW h2 {
+    font-size: 28px;
+  }
+}
+
+/* Very small devices (old iPhones / SE) */
+@media (max-width: 480px) {
+  .page-header__innerAuW h2 {
+    font-size: 22px;
+  }
+}

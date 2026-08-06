@@ -1,0 +1,36 @@
+/* Center align tab list */
+.custom-tablist {
+  display: inline-flex;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  margin: 0 auto 20px auto;
+  padding: 0;
+}
+
+.custom-tablist .react-tabs__tab {
+  list-style: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.custom-tablist .react-tabs__tab--selected {
+  border: 1px solid #ddd;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  background: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .custom-tablist {
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+  }
+
+  .custom-tablist .react-tabs__tab {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,510 @@
+import bg from "@/assets/images/backgrounds/faq-page-shape.png";
+
+const seopackdata = {
+  bg,
+  bottomText: "Tzar services built specifically for your business.",
+  faqs: [
+    [
+      {
+        id: 1,
+        title: "Initial Review & Analysis",
+        text: "In-Depth Site Analysis",
+        text1: "Duplicate Content Check",
+        text2: "Backlinks Analysis",
+        text3: "Competition Analysis",
+        text4: "Keyword Analysis",
+        text5: "Baseline Ranking Check",
+        text6: "Keyword URL Mapping",
+        text7: "Broken Links Check",
+        text8: "Google Penalty Check",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: (<><i class="fa fa-check"></i></>),
+        icon12: (<><i class="fa fa-check"></i></>),
+        icon13: (<><i class="fa fa-check"></i></>),
+        icon14: (<><i class="fa fa-check"></i></>),
+
+        icon21: (<><i class="fa fa-times"></i></>),
+        icon22: (<><i class="fa fa-check"></i></>),
+        icon23: (<><i class="fa fa-check"></i></>),
+        icon24: (<><i class="fa fa-check"></i></>),
+
+        icon31: "2",
+        icon32: "2",
+        icon33: "3",
+        icon34: "3",
+
+        icon41: (<><i class="fa fa-check"></i></>),
+        icon42: (<><i class="fa fa-check"></i></>),
+        icon43: (<><i class="fa fa-check"></i></>),
+        icon44: (<><i class="fa fa-check"></i></>),
+
+        icon51: (<><i class="fa fa-check"></i></>),
+        icon52: (<><i class="fa fa-check"></i></>),
+        icon53: (<><i class="fa fa-check"></i></>),
+        icon54: (<><i class="fa fa-check"></i></>),
+
+        icon61: (<><i class="fa fa-check"></i></>),
+        icon62: (<><i class="fa fa-check"></i></>),
+        icon63: (<><i class="fa fa-check"></i></>),
+        icon64: (<><i class="fa fa-check"></i></>),
+
+        icon71: (<><i class="fa fa-check"></i></>),
+        icon72: (<><i class="fa fa-check"></i></>),
+        icon73: (<><i class="fa fa-check"></i></>),
+        icon74: (<><i class="fa fa-check"></i></>),
+
+        icon81: (<><i class="fa fa-check"></i></>),
+        icon82: (<><i class="fa fa-check"></i></>),
+        icon83: (<><i class="fa fa-check"></i></>),
+        icon84: (<><i class="fa fa-check"></i></>),
+
+      },
+      {
+        id: 2,
+        title: "On Page Optimization ",
+        text: "Canonicalization",
+        text1: "Header (H1) Tags Optimization",
+        text2: "Internal Link Structuring & Optimization",
+        text3: "Existing Content Optimization",
+        text4: "Robots.Txt Creation/Analysis",
+        text5: "Xml Sitemap/Analysis",
+        text6: "Google Console Set Up (if not set up)",
+        text7: "Google Analytics Set Up (if not setup)",
+        text8: "Desktop Page Speed Optimization*",
+        text9: "Fresh Web Content Suggestions (Writing charges extra)",
+        text10: "Title & Meta Tags Optimization",
+        text11: "Image & Hyperlink Optimization",
+        text12: "Bing Webmaster Tools Set Up (if not set up)",
+        text13: "HTML Site Map Creation",
+        text14: "Footer Optimization",
+        text15: "Website Usability analysis",
+        text16: "Check Header Status, Meta Robots, Google Cache of Pages",
+        text17: "Check Mobility Issues",
+        text18: "Custom 404 Page Analysis",
+        text19: "URL Structure Analysis",
+        text20: "No Follow on External Links",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: (<><i class="fa fa-check"></i></>),
+        icon12: (<><i class="fa fa-check"></i></>),
+        icon13: (<><i class="fa fa-check"></i></>),
+        icon14: (<><i class="fa fa-check"></i></>),
+
+        icon21: (<><i class="fa fa-check"></i></>),
+        icon22: (<><i class="fa fa-check"></i></>),
+        icon23: (<><i class="fa fa-check"></i></>),
+        icon24: (<><i class="fa fa-check"></i></>),
+
+        icon31: (<><i class="fa fa-check"></i></>),
+        icon32: (<><i class="fa fa-check"></i></>),
+        icon33: (<><i class="fa fa-check"></i></>),
+        icon34: (<><i class="fa fa-check"></i></>),
+
+        icon41: (<><i class="fa fa-check"></i></>),
+        icon42: (<><i class="fa fa-check"></i></>),
+        icon43: (<><i class="fa fa-check"></i></>),
+        icon44: (<><i class="fa fa-check"></i></>),
+
+        icon51: (<><i class="fa fa-check"></i></>),
+        icon52: (<><i class="fa fa-check"></i></>),
+        icon53: (<><i class="fa fa-check"></i></>),
+        icon54: (<><i class="fa fa-check"></i></>),
+
+        icon61: (<><i class="fa fa-check"></i></>),
+        icon62: (<><i class="fa fa-check"></i></>),
+        icon63: (<><i class="fa fa-check"></i></>),
+        icon64: (<><i class="fa fa-check"></i></>),
+
+        icon71: (<><i class="fa fa-check"></i></>),
+        icon72: (<><i class="fa fa-check"></i></>),
+        icon73: (<><i class="fa fa-check"></i></>),
+        icon74: (<><i class="fa fa-check"></i></>),
+
+        icon81: (<><i class="fa fa-check"></i></>),
+        icon82: (<><i class="fa fa-check"></i></>),
+        icon83: (<><i class="fa fa-check"></i></>),
+        icon84: (<><i class="fa fa-check"></i></>),
+
+        icon91: (<><i class="fa fa-check"></i></>),
+        icon92: (<><i class="fa fa-check"></i></>),
+        icon93: (<><i class="fa fa-check"></i></>),
+        icon94: (<><i class="fa fa-check"></i></>),
+
+        icon101: "Upto 20 Pages",
+        icon102: "Upto 30 Pages",
+        icon103: "Upto 50 Pages",
+        icon104: "Upto 75 Pages",
+
+
+        icon111: (<><i class="fa fa-check"></i></>),
+        icon112: (<><i class="fa fa-check"></i></>),
+        icon113: (<><i class="fa fa-check"></i></>),
+        icon114: (<><i class="fa fa-check"></i></>),
+
+        icon121: (<><i class="fa fa-times"></i></>),
+        icon122: (<><i class="fa fa-times"></i></>),
+        icon123: (<><i class="fa fa-check"></i></>),
+        icon124: (<><i class="fa fa-check"></i></>),
+
+        icon131: (<><i class="fa fa-times"></i></>),
+        icon132: (<><i class="fa fa-check"></i></>),
+        icon133: (<><i class="fa fa-check"></i></>),
+        icon134: (<><i class="fa fa-check"></i></>),
+
+        icon141: (<><i class="fa fa-times"></i></>),
+        icon142: (<><i class="fa fa-times"></i></>),
+        icon143: (<><i class="fa fa-check"></i></>),
+        icon144: (<><i class="fa fa-check"></i></>),
+
+        icon151: (<><i class="fa fa-times"></i></>),
+        icon152: (<><i class="fa fa-times"></i></>),
+        icon153: (<><i class="fa fa-check"></i></>),
+        icon154: (<><i class="fa fa-check"></i></>),
+
+        icon161: (<><i class="fa fa-check"></i></>),
+        icon162: (<><i class="fa fa-check"></i></>),
+        icon163: (<><i class="fa fa-check"></i></>),
+        icon164: (<><i class="fa fa-check"></i></>),
+
+        icon171: (<><i class="fa fa-check"></i></>),
+        icon172: (<><i class="fa fa-check"></i></>),
+        icon173: (<><i class="fa fa-check"></i></>),
+        icon174: (<><i class="fa fa-check"></i></>),
+
+        icon181: (<><i class="fa fa-check"></i></>),
+        icon182: (<><i class="fa fa-check"></i></>),
+        icon183: (<><i class="fa fa-check"></i></>),
+        icon184: (<><i class="fa fa-check"></i></>),
+
+        icon191: (<><i class="fa fa-check"></i></>),
+        icon192: (<><i class="fa fa-check"></i></>),
+        icon193: (<><i class="fa fa-check"></i></>),
+        icon194: (<><i class="fa fa-check"></i></>),
+
+        icon201: (<><i class="fa fa-times"></i></>),
+        icon202: (<><i class="fa fa-check"></i></>),
+        icon203: (<><i class="fa fa-check"></i></>),
+        icon204: (<><i class="fa fa-check"></i></>),
+      },
+      {
+        id: 3,
+        title: "Conversion Tracking and Optimization",
+        text: "Google Analytics Goal Conversion Setup Suggestion**",
+        text1: "Heatmap integration",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: (<><i class="fa fa-times"></i></>),
+        icon12: (<><i class="fa fa-times"></i></>),
+        icon13: (<><i class="fa fa-check"></i></>),
+        icon14: (<><i class="fa fa-check"></i></>),
+      },
+      {
+        id: 4,
+        title: "Schema & Structured Data Mark Up",
+        text: "Logo Optimization",
+        text1: "Schema on Contact Address",
+        text2: "Schema on Breadcrumb",
+        text3: "Schema on Images",
+        text4: "Schema on Blog",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: (<><i class="fa fa-check"></i></>),
+        icon12: (<><i class="fa fa-check"></i></>),
+        icon13: (<><i class="fa fa-check"></i></>),
+        icon14: (<><i class="fa fa-check"></i></>),
+
+        icon21: (<><i class="fa fa-check"></i></>),
+        icon22: (<><i class="fa fa-check"></i></>),
+        icon23: (<><i class="fa fa-check"></i></>),
+        icon24: (<><i class="fa fa-check"></i></>),
+
+        icon31: (<><i class="fa fa-check"></i></>),
+        icon32: (<><i class="fa fa-check"></i></>),
+        icon33: (<><i class="fa fa-check"></i></>),
+        icon34: (<><i class="fa fa-check"></i></>),
+
+        icon41: (<><i class="fa fa-times"></i></>),
+        icon42: (<><i class="fa fa-check"></i></>),
+        icon43: (<><i class="fa fa-check"></i></>),
+        icon44: (<><i class="fa fa-check"></i></>),
+
+      },
+      {
+        id: 5,
+        title: "Local Search Optimization",
+        text: "Google Business Profile Setup & Verification",
+        text1: "Bing Local Listing Setup",
+        text2: "Local Business Directory/ Citations",
+        text3: "Contact Address in Footer",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: (<><i class="fa fa-times"></i></>),
+        icon12: (<><i class="fa fa-check"></i></>),
+        icon13: (<><i class="fa fa-check"></i></>),
+        icon14: (<><i class="fa fa-check"></i></>),
+
+        icon21: "5",
+        icon22: "7",
+        icon23: "10",
+        icon24: "10",
+
+        icon31: (<><i class="fa fa-check"></i></>),
+        icon32: (<><i class="fa fa-check"></i></>),
+        icon33: (<><i class="fa fa-check"></i></>),
+        icon34: (<><i class="fa fa-check"></i></>),
+
+      },
+      {
+        id: 6,
+        title: "Content Marketing (per month)",
+        text: "Website Blog Writing",
+        text1: "Blog Writing",
+        text2: "Classified Writing",
+        text3: "Article Writing",
+        text4: "Press Release Writing***",
+        text5: "Infographic Creation",
+        text6: "Guest Blog Writing",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: "2",
+        icon12: "3",
+        icon13: "5",
+        icon14: "5",
+
+        icon21: "2",
+        icon22: "4",
+        icon23: "5",
+        icon24: "5",
+
+        icon31: "2",
+        icon32: "4",
+        icon33: "5",
+        icon34: "5",
+
+        icon41: (<><i class="fa fa-times"></i></>),
+        icon42: (<><i class="fa fa-times"></i></>),
+        icon43: (<><i class="fa fa-check"></i></>),
+        icon44: (<><i class="fa fa-check"></i></>),
+
+        icon51: (<><i class="fa fa-times"></i></>),
+        icon52: (<><i class="fa fa-check"></i></>),
+        icon53: (<><i class="fa fa-check"></i></>),
+        icon54: (<><i class="fa fa-check"></i></>),
+
+        icon61: (<><i class="fa fa-check"></i></>),
+        icon62: (<><i class="fa fa-check"></i></>),
+        icon63: (<><i class="fa fa-check"></i></>),
+        icon64: (<><i class="fa fa-check"></i></>),
+      },
+      {
+        id: 7,
+        title: "Off Page Optimization ",
+        text: "Blog Submission",
+        text1: "Article Submission",
+        text2: "Blog Promotion",
+        text3: "Company Profile Listing",
+        text4: "Classified Submissions",
+        text5: "Article Promotion",
+        text6: "Link Syndication",
+        text7: "Video Promotion ****",
+        text8: "Image Submissions",
+        text9: "Press Release Promotion***",
+        text10: "Press Release Submission***",
+        text11: "Infographic Promotion",
+        text12: "Infographic Distribution",
+        text13: "Video Submission****",
+        text14: "Q & A Submissions",
+        text15: "Guest Blog Posting",
+        text16: "Guest Blog Promotion",
+        text17: "Competitor Link Analysis and Creation",
+        text18: "Micro Blogging",
+        text19: "Content Syndication",
+
+        icon: "2",
+        icon1: "3",
+        icon2: "6",
+        icon3: "6",
+
+        icon11: "2",
+        icon12: "4",
+        icon13: "5",
+        icon14: "5",
+
+        icon21: "3",
+        icon22: "9",
+        icon23: "18",
+        icon24: "20",
+
+        icon31: "10",
+        icon32: "10",
+        icon33: "15",
+        icon34: "20",
+
+        icon41: "12",
+        icon42: "12",
+        icon43: "15",
+        icon44: "20",
+
+        icon51: "3",
+        icon52: "5",
+        icon53: "10",
+        icon54: "15",
+
+        icon61: (<><i class="fa fa-check"></i></>),
+        icon62: (<><i class="fa fa-check"></i></>),
+        icon63: (<><i class="fa fa-check"></i></>),
+        icon64: (<><i class="fa fa-check"></i></>),
+
+        icon71: (<><i class="fa fa-check"></i></>),
+        icon72: (<><i class="fa fa-check"></i></>),
+        icon73: (<><i class="fa fa-check"></i></>),
+        icon74: (<><i class="fa fa-check"></i></>),
+
+        icon81: (<><i class="fa fa-check"></i></>),
+        icon82: (<><i class="fa fa-check"></i></>),
+        icon83: (<><i class="fa fa-check"></i></>),
+        icon84: (<><i class="fa fa-check"></i></>),
+
+        icon91: (<><i class="fa fa-times"></i></>),
+        icon92: (<><i class="fa fa-times"></i></>),
+        icon93: "3",
+        icon94: "3",
+
+        icon101: (<><i class="fa fa-times"></i></>),
+        icon102: (<><i class="fa fa-times"></i></>),
+        icon103: "1",
+        icon104: "1",
+
+
+        icon111: (<><i class="fa fa-times"></i></>),
+        icon112: (<><i class="fa fa-check"></i></>),
+        icon113: (<><i class="fa fa-check"></i></>),
+        icon114: (<><i class="fa fa-check"></i></>),
+
+        icon121: (<><i class="fa fa-times"></i></>),
+        icon122: (<><i class="fa fa-check"></i></>),
+        icon123: (<><i class="fa fa-check"></i></>),
+        icon124: (<><i class="fa fa-check"></i></>),
+
+        icon131: (<><i class="fa fa-check"></i></>),
+        icon132: (<><i class="fa fa-check"></i></>),
+        icon133: (<><i class="fa fa-check"></i></>),
+        icon134: (<><i class="fa fa-check"></i></>),
+
+        icon141: (<><i class="fa fa-check"></i></>),
+        icon142: (<><i class="fa fa-check"></i></>),
+        icon143: (<><i class="fa fa-check"></i></>),
+        icon144: (<><i class="fa fa-check"></i></>),
+
+        icon151: (<><i class="fa fa-check"></i></>),
+        icon152: (<><i class="fa fa-check"></i></>),
+        icon153: (<><i class="fa fa-check"></i></>),
+        icon154: (<><i class="fa fa-check"></i></>),
+
+        icon161: (<><i class="fa fa-check"></i></>),
+        icon162: (<><i class="fa fa-check"></i></>),
+        icon163: (<><i class="fa fa-check"></i></>),
+        icon164: (<><i class="fa fa-check"></i></>),
+
+        icon171: (<><i class="fa fa-check"></i></>),
+        icon172: (<><i class="fa fa-check"></i></>),
+        icon173: (<><i class="fa fa-check"></i></>),
+        icon174: (<><i class="fa fa-check"></i></>),
+
+        icon181: "2",
+        icon182: "4",
+        icon183: "5",
+        icon184: "10",
+
+        icon191: (<><i class="fa fa-check"></i></>),
+        icon192: (<><i class="fa fa-check"></i></>),
+        icon193: (<><i class="fa fa-check"></i></>),
+        icon194: (<><i class="fa fa-check"></i></>),
+      },
+      {
+        id: 8,
+        title: "Monthly Reporting",
+        text: "Search Engine Rank Report",
+        text1: "SEO Activity Reports",
+        text2: "Google Analytics Report",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: (<><i class="fa fa-check"></i></>),
+        icon12: (<><i class="fa fa-check"></i></>),
+        icon13: (<><i class="fa fa-check"></i></>),
+        icon14: (<><i class="fa fa-check"></i></>),
+
+        icon21: (<><i class="fa fa-check"></i></>),
+        icon22: (<><i class="fa fa-check"></i></>),
+        icon23: (<><i class="fa fa-check"></i></>),
+        icon24: (<><i class="fa fa-check"></i></>),
+
+      },
+      {
+        id: 9,
+        title: "Customer Support",
+        text: "Email, Chat, Phone",
+        text1: "Project Management Tool Tracking",
+
+        icon: (<><i class="fa fa-check"></i></>),
+        icon1: (<><i class="fa fa-check"></i></>),
+        icon2: (<><i class="fa fa-check"></i></>),
+        icon3: (<><i class="fa fa-check"></i></>),
+
+        icon11: (<><i class="fa fa-check"></i></>),
+        icon12: (<><i class="fa fa-check"></i></>),
+        icon13: (<><i class="fa fa-check"></i></>),
+        icon14: (<><i class="fa fa-check"></i></>),
+
+      },
+    ],
+    // [
+    //   {
+    //     id: 1,
+    //     title: "What are the 6 types of social media marketing?",
+    //     text: "Social media marketing includes six types of sites and platforms: social networking, bookmarking, social news, media sharing, microblogging, and online forums. Each type has its own strengths and weaknesses and they can be used in different ways to grow your business.",
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "What is the difference between SEO and SEM?",
+    //     text: "SEO is an organic way to market your business, while SEM is a combination of organic and paid search. With SEO, you are optimizing the content on your website to make it easier for customers to find you in search engine results. With SEM, you are actively buying ads to increase visibility on search engine result pages.",
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "What is PPC and how it works?",
+    //     text: "PPC stands for Pay-Per-Click and is an online advertising model in which an advertiser pays a publisher each time someone clicks on an advertisement. This type of advertising allows you to target and reach the right audience quickly and efficiently without having to invest in long-term campaigns. With PPC, you can set a budget, adjust bids, and track performance to optimize your campaigns and get the best return on investment (ROI).",
+    //   },
+    // ],
+  ],
+};
+
+export default seopackdata;

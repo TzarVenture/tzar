@@ -1,0 +1,36 @@
+.blog-card{
+    display: flex;
+    flex-direction: column;
+    width: 400px !important;
+    background-color: #2121;
+    border-radius: 10px;
+    padding:0 !important;
+}
+
+.blog-image {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.blog-card-content{
+  padding: 16px
+}
+
+.blog-title{
+    font-size: 22px;
+    color: black;
+    font-weight: 600;
+}
+
+.bottom-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.bottom-img-container{
+    color: black
+}

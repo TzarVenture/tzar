@@ -1,0 +1,36 @@
+
+.blog-page-container{
+    display: flex;
+    gap: 30px;
+    padding: 30px 100px
+}
+
+.blog-heading{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.blog-content{
+    width: 70%;
+    padding: 20px 50px;
+    margin: 0
+}
+
+.blog-sidebar{
+   width: 30%;
+    padding: 20px 0 0 0 ;
+}
+ 
+@media (max-width: 768px) {
+    .blog-page-container{
+        padding: 20px 10px;
+         flex-direction: column;
+    }
+    .blog-content{
+        width: 100%;
+        padding: 10px;
+    }
+    .blog-sidebar{
+        display: none;
+    }
+}

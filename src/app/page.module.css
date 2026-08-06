@@ -1,0 +1,56 @@
+.pageHeaderInner {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Title */
+.pageTitle {
+  font-size: 48px; /* desktop default */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  word-wrap: break-word;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* iPads and tablets */
+@media (max-width: 1024px) {
+  .pageTitle {
+    font-size: 36px;
+  }
+  .breadcrumb {
+    font-size: 16px;
+  }
+}
+
+/* iPhones and small screens */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 28px;
+  }
+  .breadcrumb {
+    font-size: 14px;
+  }
+}
+
+/* Very small devices (like iPhone SE) */
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 22px;
+  }
+  .breadcrumb {
+    font-size: 12px;
+  }
+}
