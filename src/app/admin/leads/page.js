@@ -98,9 +98,10 @@ export default function AdminLeadsPage() {
       }
 
       setIsAuthenticated(true);
-      setPasscode(passToUse);
+      const authToSave = json.sessionToken || passToUse;
+      setPasscode(authToSave);
       if (typeof window !== "undefined") {
-        localStorage.setItem("tzar_admin_pass", passToUse);
+        localStorage.setItem("tzar_admin_pass", authToSave);
       }
 
       const combined = [

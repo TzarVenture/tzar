@@ -3,15 +3,25 @@ import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 import { verifySync } from "otplib";
 
+function getExpectedSessionToken() {
+  const validPasscode = process.env.ADMIN_DASHBOARD_PASSCODE || "tzar1234";
+  return "tzar_session_" + Buffer.from(validPasscode).toString("base64");
+}
+
 function verifyAuth(inputCode) {
   if (!inputCode) return false;
   const cleanCode = inputCode.toString().trim().replace(/\s+/g, "");
 
-  // 1. Check passcode match
   const validPasscode = process.env.ADMIN_DASHBOARD_PASSCODE || "tzar1234";
+  const sessionToken = getExpectedSessionToken();
+
+  // 1. Check passcode match
   if (cleanCode === validPasscode) return true;
 
-  // 2. Check 6-digit TOTP match
+  // 2. Check session token match (for page refreshes & active session)
+  if (cleanCode === sessionToken) return true;
+
+  // 3. Check 6-digit TOTP match
   const secret = process.env.ADMIN_2FA_SECRET || "UA5JSGAY6WAVVENUC2GJRCOA23J2P3LZ";
   try {
     const res = verifySync({ token: cleanCode, secret });
@@ -101,6 +111,7 @@ export async function POST(req) {
 
     return NextResponse.json({
       success: true,
+      sessionToken: getExpectedSessionToken(),
       data: {
         contacts,
         hireus,
