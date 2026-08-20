@@ -48,6 +48,30 @@ export async function POST(req) {
       services,
     });
 
+    // === Forward Payment Lead to Central CRM ===
+    try {
+      const { forwardToCrm } = await import("@/utils/forwardToCrm");
+      await forwardToCrm({
+        source: "WEBSITE_CONTACT",
+        fullName: customerName,
+        email: customerEmail,
+        phone: body.phone || body.customerPhone || "",
+        companyName: company || "",
+        city: address || "",
+        country: "India",
+        interestedServices: Array.isArray(services) ? services : services ? [services] : [],
+        requirementsMessage: `Payment Received: ₹${amount} | Services: ${Array.isArray(services) ? services.join(", ") : services || "N/A"} | Payment ID: ${razorpay_payment_id}`,
+        estimatedBudget: Number(amount) || 0,
+        tzarData: {
+          formType: "PAYMENT",
+          razorpayPaymentId: razorpay_payment_id,
+          razorpayOrderId: razorpay_order_id,
+        },
+      });
+    } catch (crmErr) {
+      console.error("Central CRM Payment Ingestion Error:", crmErr);
+    }
+
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const transporter = nodemailer.createTransport({
         service: "gmail",
