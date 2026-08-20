@@ -2,27 +2,47 @@ import { writeFile } from "fs/promises";
 import path from "path";
 import Hireus from "@/models/hireus";
 import connectDB from "@/lib/connectDB";
+import { forwardToCrm } from "@/utils/forwardToCrm";
 
 export async function POST(req) {
   try {
     await connectDB();
 
-    const form = await req.formData();
-    const fullName = form.get("fullName");
-    const email = form.get("email");
-    const phone = form.get("phone");
-    const internshipType = form.get("internshipType");
-    const file = form.get("resume"); // actual file
+    let fullName = "";
+    let email = "";
+    let phone = "";
+    let internshipType = "";
+    let filePath = "";
 
-    // ====== Save PDF in /public/uploads/ ======
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
+    try {
+      const form = await req.formData();
+      fullName = form.get("fullName");
+      email = form.get("email");
+      phone = form.get("phone");
+      internshipType = form.get("internshipType");
+      const file = form.get("resume"); // actual file
 
-    const filePath = `/uploads/${Date.now()}-${file.name}`;
-    const fullPath = path.join(process.cwd(), "public", filePath);
+      if (file && typeof file === "object" && file.name) {
+        // ====== Save PDF in /public/uploads/ ======
+        const bytes = await file.arrayBuffer();
+        const buffer = Buffer.from(bytes);
 
-    await writeFile(fullPath, buffer);
-    console.log("File saved:", fullPath);
+        filePath = `/uploads/${Date.now()}-${file.name}`;
+        const fullPath = path.join(process.cwd(), "public", filePath);
+
+        await writeFile(fullPath, buffer);
+        console.log("File saved:", fullPath);
+      } else if (typeof file === "string") {
+        filePath = file;
+      }
+    } catch {
+      const data = await req.json().catch(() => ({}));
+      fullName = data.fullName;
+      email = data.email;
+      phone = data.phone;
+      internshipType = data.internshipType;
+      filePath = data.resume || "";
+    }
 
     // ==== Save to MongoDB ====
     const doc = await Hireus.create({
@@ -31,6 +51,20 @@ export async function POST(req) {
       phone,
       internshipType,
       resume: filePath, // saved URL
+    });
+
+    // ==== Forward to Central CRM ====
+    await forwardToCrm({
+      source: "HIRE_US",
+      fullName,
+      email,
+      phone,
+      interestedServices: internshipType ? [internshipType] : [],
+      requirementsMessage: `Internship/Hire: ${internshipType || "N/A"}${filePath ? ` | Resume: ${filePath}` : ""}`,
+      tzarData: {
+        formType: "HIRE_US",
+        resumeUrl: filePath,
+      },
     });
 
     // ==== Send to Google Sheets ====

@@ -1,4 +1,5 @@
 import clientPromise from "@/lib/mongodb";
+import { forwardToCrm } from "@/utils/forwardToCrm";
 
 export async function POST(req) {
   try {
@@ -24,7 +25,19 @@ export async function POST(req) {
     await collection.insertOne(mongoDoc);
     console.log("Saved to MongoDB:", mongoDoc);
 
-    // === 2️⃣ Send to Google Sheets ===
+    // === 2️⃣ Forward to Central CRM ===
+    await forwardToCrm({
+      source: "WEBSITE_CONTACT",
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      tzarData: {
+        formType: "CONTACT",
+      },
+    });
+
+    // === 3️⃣ Send to Google Sheets ===
     try {
       const resSheets = await fetch(process.env.GOOGLE_SHEETS_WEBHOOK, {
         method: "POST",

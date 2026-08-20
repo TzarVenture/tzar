@@ -1,12 +1,30 @@
 "use server"
 import dbConn from "@/utils/dbConn";
 import Contact from "@/models/contact";
+import { forwardToCrm } from "@/utils/forwardToCrm";
 
 export const submitContact = async (data) =>{
     try{
 
         await dbConn();
         await Contact.create(data);
+
+        // Forward to Central CRM
+        await forwardToCrm({
+            source: "WEBSITE_CONTACT",
+            fullName: data.fullname || data.name,
+            email: data.email,
+            phone: data.phone,
+            city: data.city || "",
+            country: data.country || "India",
+            interestedServices: data.services ? [data.services] : [],
+            requirementsMessage: data.message || "",
+            tzarData: {
+                formType: "CONTACT",
+                checkbox: data.checkbox || "",
+            },
+        });
+
         return{ status:"OK", message:"Message sent successfully!"};
 
     }catch(e){
