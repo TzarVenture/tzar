@@ -98,8 +98,9 @@ export default function PaymentPage() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY,
         amount: data.amount,
         currency: "INR",
-        name: "Your Company Name",
-        description: "Service Payment",
+        name: "TZAR VENTURE",
+        description: "Digital Marketing & Agency Services",
+        image: "/tzarlogonew.png",
         order_id: data.orderId,
 
         handler: async function (response) {
